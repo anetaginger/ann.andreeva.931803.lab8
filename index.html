@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>lab8</title>
+    <title>Document</title>
     <meta charset='UTF-8' />
     <link rel="stylesheet" type="text/css" href="index.css" />
  </head>
@@ -57,4 +57,24 @@
     next.children[0].children[0].value=a1;
     next.children[0].children[1].value=a2;
   }
+}
+function plsdown(o){
+  var a1, a2, b1, b2,now, next, p3;
+
+  now = o.parentNode.parentNode;
+  next = now.nextSibling;
+  if (next!=null) {
+    a1 = now.children[0].children[0].value;
+    a2 = now.children[0].children[1].value;
+    b1 = next.children[0].children[0].value;
+    b2 = next.children[0].children[1].value;
+    now.children[0].children[0].value=b1;
+    now.children[0].children[1].value=b2;
+    next.children[0].children[0].value=a1;
+    next.children[0].children[1].value=a2;
+  }
+}
+function plsdelete(o){
+  iter--;
+  o.parentNode.remove();
 }
