@@ -14,3 +14,33 @@
 </form>
   <div id="printBlock"></div>
 </body>
+<script>
+    var keyBox1 = document.search.firstKey;
+    var keyBox2 = document.search.secondKey;
+    var printBox = document.savadd.save;
+    var addBox = document.savadd.add;
+    var iter = 0;
+    
+    // обработчик изменения текста
+    function onchange(e){
+    printBlock.textContent=null;
+    if (iter<=1) {
+      printBlock.textContent += "{\u0022"+document.search.firstKey.value+"\u0022";
+      printBlock.textContent += ":\u0022"+document.search.secondKey.value+"\u0022}";
+    }
+    else {
+      printBlock.textContent = "{";
+      i=0;
+      while (i<+iter) {
+        printBlock.textContent += "\u0022"+document.search.firstKey[i].value+"\u0022";
+        printBlock.textContent += ":\u0022"+document.search.secondKey[i].value+"\u0022";
+        i++;
+        if (i!=iter) {
+          printBlock.textContent += ",";
+        }
+      }
+      printBlock.textContent += "}";
+    }
+    
+    }
+    
