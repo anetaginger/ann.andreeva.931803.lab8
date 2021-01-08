@@ -78,3 +78,23 @@ function plsdelete(o){
   iter--;
   o.parentNode.remove();
 }
+
+function add(){
+  iter = iter+1;
+var nodet = document.createElement('tr');
+var node = document.createElement('td');
+node.innerHTML =  "<input type='text' name='firstKey'>";
+node.innerHTML += "<input type='text' name='secondKey'>";
+node.innerHTML += "<input type='button' name='up' value='↑' onClick=plsup(this)>";
+node.innerHTML += "<input type='button' name='down' value='↓' onClick=plsdown(this)>";
+node.innerHTML += "<input type='button' name='del' value='X' onClick=plsdelete(this) >"  ;
+document.search.appendChild(nodet);
+nodet.appendChild(node);
+}
+window.onload = add;
+printBox.onclick = onchange;
+addBox.onclick = add;
+//keydelete.onclick = plsdelete(this);
+//printBox.addEventListener("click", onchange);
+</script>
+</html>
